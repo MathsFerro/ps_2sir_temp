@@ -21,11 +21,12 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UsuarioController user = new UsuarioController();
-
+		RequestDispatcher dispatcher;
+		
 		String name = request.getParameter("nm_user");
 		String password = request.getParameter("password");
 		String button = request.getParameter("button");
-		RequestDispatcher dispatcher;
+
 		
 		if(button.equalsIgnoreCase("logar")) 
 			route = user.checkExistUser(name, password) ? "login.jsp" : "errorlogin.jsp";	
