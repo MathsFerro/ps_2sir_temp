@@ -18,7 +18,10 @@
 		<hr>
 		
 		<input name="button" value="Logar" type="submit"></input>
-		<input name="button" value="Não tenho cadastro" type="submit"></input>
+		
+		<a href="http://localhost:8080/PS_2SIR/register.jsp">
+			<input name="button" value="Não tenho cadastro" type="button"></input>
+		</a>
 	</form>
 </body>
 </html>

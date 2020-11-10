@@ -4,9 +4,9 @@ public class Usuario {
 
 	private String name;
 	private String password;
-	private Integer isAdmin;
+	private String isAdmin;
 	
-	public Usuario( String name, String password, Integer isAdmin ) {
+	public Usuario( String name, String password, String isAdmin ) {
 		this.password = password;
 		this.isAdmin = isAdmin;
 		this.name = name;
@@ -28,11 +28,11 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public Integer getIsAdmin() {
+	public String getIsAdmin() {
 		return isAdmin;
 	}
 
-	public void setIs_admin(Integer isAdmin) {
+	public void setIs_admin(String isAdmin) {
 		this.isAdmin = isAdmin;
 	}
 	

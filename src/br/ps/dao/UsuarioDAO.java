@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 import banco.Conexao;
 import br.ps.entities.Usuario;
@@ -17,23 +16,22 @@ public class UsuarioDAO {
 	private String sql;
 	
 	public boolean addUser( Usuario user ) {
-		boolean retorno = false;
 		sql = "INSERT INTO tb_users (nm_user, password, is_admin) VALUES (?, ?, ?)";
 		connection = new Conexao().conectar();
 		try {
 			ps = connection.prepareStatement(sql);
-			
+				
 			ps.setString(1, user.getName());
 			ps.setString(2, user.getPassword());
-			ps.setInt(3, user.getIsAdmin());
-		
-			ps.execute();
+			ps.setInt(3, Integer.parseInt(user.getIsAdmin()));
 			
-			retorno = rs.next();
+			ps.execute();
+
+			return rs.next();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return retorno;
+		return false;
 	}
 	
 	public Boolean checkExistUser( String name, String password ) {

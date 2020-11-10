@@ -7,7 +7,12 @@ public class UsuarioController {
 
 	UsuarioDAO dao = new UsuarioDAO();
 	
-	public Boolean addUser( Usuario user ) {
+	public Boolean addUser( Usuario user ) {	
+		if(user.getIsAdmin().equalsIgnoreCase("on"))
+			user.setIs_admin("1");
+		else 
+			user.setIs_admin("0");
+		
 		return dao.addUser(user);
 	}
  	
