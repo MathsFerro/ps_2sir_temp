@@ -9,7 +9,7 @@
 <body>
 <h1>Registrar Usuário</h1>
 	<hr>
-	<form action="register-user" method="post">
+	<form action="register" method="post">
 		<label for="nm_user">Nome: </label><br>
 		<input name="nm_user" type="text"></input><br><br>
 	

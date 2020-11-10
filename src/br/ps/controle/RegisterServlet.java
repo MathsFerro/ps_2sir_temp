@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.ps.controllers.UsuarioController;
 import br.ps.entities.Usuario;
 
-@WebServlet("/register-user")
+@WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -28,13 +28,15 @@ public class RegisterServlet extends HttpServlet {
 		String button = request.getParameter("button");
 		
 		RequestDispatcher dispatcher;
-		
-		if(name != "" && password.equalsIgnoreCase(password_confirm)) 
+
+		if(name != "" && password.equalsIgnoreCase(password_confirm)) {
+			is_admin = is_admin == null ? "0" : "1";
 			user.addUser(new Usuario(name, password_confirm, is_admin));
+		}
+			
 		
 		dispatcher = request.getRequestDispatcher("index.jsp");
 		dispatcher.forward(request, response);
-		
 	}
 
 }

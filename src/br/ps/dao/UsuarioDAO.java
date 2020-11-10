@@ -27,7 +27,7 @@ public class UsuarioDAO {
 			
 			ps.execute();
 
-			return rs.next();
+			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
