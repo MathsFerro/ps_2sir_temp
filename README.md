@@ -18,7 +18,6 @@ CREATE TABLE tb_users (<br>
 ALTER TABLE tb_users ADD CONSTRAINT id_user_pk PRIMARY KEY (id_user);
 
 
-
-SELECT * from tb_users;
+// CRIAR TABELAS PARA PISTAS / DESTINOS / ENIGMAS
 
 
