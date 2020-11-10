@@ -9,12 +9,12 @@ DROP TABLE tb_users CASCADE CONSTRAINTS;
 
 CREATE SEQUENCE id_user_seq START WITH 1;
 
-CREATE TABLE tb_users (
-  id_user number DEFAULT id_user_seq.nextval NOT NULL,
-  nm_user varchar2(255) not null,
-  password varchar2(50) not null,
-  is_admin number
-);
+CREATE TABLE tb_users (<br>
+  id_user number DEFAULT id_user_seq.nextval NOT NULL,<br>
+  nm_user varchar2(255) not null,<br>
+  password varchar2(50) not null,<br>
+  is_admin number<br>
+);<br>
 ALTER TABLE tb_users ADD CONSTRAINT id_user_pk PRIMARY KEY (id_user);
 
 
